@@ -1,0 +1,2 @@
+Expected URL: https://qa-scooter.praktikum-services.ru/
+Actual URL: https://qa-scooter.praktikum-services.ru/
