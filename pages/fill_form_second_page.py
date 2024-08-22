@@ -18,6 +18,8 @@ class FillFormSecond(BasePage):
     def fill_date(self):
         self.click_element(*self.date)
         self.send_keys(self.date, value=self.get_next_day())
+
+    @allure.step('Выбрать следующий день календаря')
     def get_next_day(self):
         today = datetime.today()
         next_day = today + timedelta(days=1)

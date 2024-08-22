@@ -1,7 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
 
 
 class BasePage:
@@ -23,12 +22,6 @@ class BasePage:
 
     def click_element(self, *locator):
         self.driver.find_element(*locator).click()
-
-    def enter_element(self):
-        self.driver.send_keys(Keys.ENTER)
-
-    def down_element(self):
-        self.driver.send_keys(Keys.ARROW_DOWN)
 
     def go_to_url(self, name_url):
         self.driver.get(name_url)

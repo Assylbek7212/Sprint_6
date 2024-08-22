@@ -47,6 +47,7 @@ class FillFormFirst(BasePage):
     def click_button(self):
         self.click_element(*self.button_dalee)
 
+    @allure.step('Заполнение формы')
     def fill_form_and_click_button(self):
         self.fill_name()
         self.fill_lastname()
