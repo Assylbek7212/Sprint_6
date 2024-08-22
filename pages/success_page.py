@@ -26,7 +26,7 @@ class CheckSuccessOrder(BasePage):
 
     @allure.step('Проверяем успешность формирования заказа')
     def check_success(self):
-        text = self.get_element_text(self.order)
+        text = self.get_element_text(self.yes_button)
         return text
 
     @allure.step('Находим и нажимаем на кнопку перехода сформировавшегося заказа')
@@ -36,5 +36,6 @@ class CheckSuccessOrder(BasePage):
     @allure.step('Завершить заказ')
     def complete_order_process(self):
         self.click_button_order()
+        self.check_success()
         self.confirm_order()
 

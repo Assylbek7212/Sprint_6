@@ -14,6 +14,7 @@ class TestOrderScooter:
     ])
     @allure.description(
         'Заказ самоката. Проверяем весь флоу позитивного сценария')
+    @allure.title("Заказ самоката")
     def test_order_scooter_up(self, driver, button_order):
         main_page = OrderScooterButton(driver)
         main_page.go_to_url_main(url)
