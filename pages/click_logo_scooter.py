@@ -19,7 +19,5 @@ class CheckLogoScooter(BasePage):
         self.click_element(*self.logo_scooter)
         self.wait_for_url_change(current_url)
         new_url = self.get_current_url()
-        print(f"Expected URL: {url}")
-        print(f"Actual URL: {new_url}")
         assert new_url == url, f"URL после перехода не соответствует ожидаемому: {new_url}"
 
