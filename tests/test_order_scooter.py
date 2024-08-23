@@ -3,14 +3,13 @@ from pages.fill_form_second_page import FillFormSecond
 from pages.order_scooter_button_main_page import OrderScooterButton
 from pages.success_page import CheckSuccessOrder
 from helpers.constants import *
-from helpers.helpers import *
 import allure
 import pytest
 
 class TestOrderScooter:
     @pytest.mark.parametrize("button_order", [
-        OrderPageLocators.BUTTON_ORDER_TOP,
-        OrderPageLocators.BUTTON_ORDER_BOTTOM
+        OrderScooterButton.BUTTON_ORDER_TOP,
+        OrderScooterButton.BUTTON_ORDER_BOTTOM
     ])
     @allure.description(
         'Заказ самоката. Проверяем весь флоу позитивного сценария')

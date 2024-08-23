@@ -1,10 +1,12 @@
 from selenium.webdriver.common.by import By
 import allure
 from helpers.base_page import BasePage
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 class OrderScooterButton(BasePage):
+
+    BUTTON_ORDER_TOP = (By.XPATH, "//button[@class='Button_Button__ra12g']")
+    BUTTON_ORDER_BOTTOM = (By.XPATH, "//button[contains(@class, 'Button_Button__ra12g') and contains(@class, "
+                                     "'Button_Middle__1CSJM')]")
     def __init__(self, driver):
         super().__init__(driver)
         self.button_order1 = (By.XPATH, "//button[@class='Button_Button__ra12g']")
@@ -19,7 +21,5 @@ class OrderScooterButton(BasePage):
     @allure.step('Нажимаем на кнопку "Заказать"')
     def click_button(self, button_order):
         self.click_element(*self.open_button)
-        WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(button_order)
-        )
+        self.wait_until(button_order)
         self.click_element(*button_order)
