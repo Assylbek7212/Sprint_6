@@ -1,0 +1,19 @@
+import allure
+from selenium import webdriver
+import pytest
+from pages.answer_to_question_page import AnswerToQuestion
+from helpers.constants import *
+
+class TestAnswerToQuestion:
+    @pytest.mark.parametrize("question_index", range(8))
+    @allure.description(
+        'На странице ищем выпадающие вопросы, нажимаем на стрелочку, открывается соответствующий текст и проверяем')
+    @allure.title('Корректность ответов на вопросы')
+    def test_answer_to_questions(self, driver, question_index):
+        answer_to_question_page = AnswerToQuestion(driver)
+        question_loc = answer_to_question_page.question_loc[question_index]
+        answer_to_question_loc = answer_to_question_page.answer_to_question_loc[question_index]
+
+        answer_to_question_text = answer_to_questions[question_index]
+
+        answer_to_question_page.check_answer(question_loc, answer_to_question_loc, answer_to_question_text)
