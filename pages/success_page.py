@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 import allure
-from helpers.base_page import BasePage
+from pages.base_page import BasePage
 
 
 class CheckSuccessOrder(BasePage):

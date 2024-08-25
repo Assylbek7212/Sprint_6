@@ -1,8 +1,7 @@
 from selenium.webdriver.common.by import By
 import allure
 from helpers.constants import *
-from helpers.base_page import BasePage
-from pages.order_scooter_button_main_page import OrderScooterButton
+from pages.base_page import BasePage
 
 
 class CheckLogoScooter(BasePage):
